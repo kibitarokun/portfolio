@@ -1,0 +1,206 @@
+@charset "UTF-8"; /*文字コードにUTF-8（ほぼ国際標準）を使うという宣言*/
+
+html{
+    font-size: 100%; /*ブラウザの設定（拡大縮小）に合わせて柔軟に変わるよう明記　裏設定で基本16px*/
+}
+
+/* 上の二つは呪文　以下、基本設定 */
+
+body{
+    font-family: sans-serif; /*どのブラウザでもゴシック体が選ばれるように*/
+    font-size: .875rem; /*remはhtmlで指定されているサイズを1remとした相対値　絶対値にしてしまうとブラウザの拡大縮小に対応しない*/
+    color: #2a2a2a;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%; /*画像の大きさが元からどんなに大きくても親要素をはみ出すことはしない*/
+}
+
+li{
+    list-style: none;
+}
+
+.wrapper{ /*幅を整えるクラスでよく使われる名前*/
+    max-width: 1200px;
+    margin: 0 auto; /*左右均等に余白を割り振ってコンテンツを真ん中に配置*/
+    padding: 0 5%; /*左右の内余白をその時の大きさの5％だけ確保*/
+}
+
+.sec-title{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.btn{
+    color: #2a2a2a;
+    border: solid 1px #2a2a2a;
+    font-size: .75rem;
+    padding: 14px 36px; /*上下より左右の方が大きく広げた方がベター*/
+    display: inline-block; /*aの性格(inline)とpなどの性格(block)をブレンドしたいいとこどりの性格に強制→余白を取りたい時に設定*/
+    margin-top: 30px;
+}
+
+#header{
+    height: 100vh; /*vhとはウィンドウサイズの縦の割合*/
+    background-image: url(../img/mainvisual.jpg); /*背景画像*/
+    background-repeat: no-repeat; /*header内に背景画像を繰り返し配置するかどうか*/
+    background-size: cover; /*広がり方*/
+    background-position: center top; /*どこに焦点をあてるか 左 上*/
+    margin-bottom: 80px;
+    position: relative; /*基準点*/
+}
+
+/* #headerの中のh1 */
+.site-title{
+    position: absolute; /*親基準に対しての絶対点*/
+    top: 30px;
+    right: 30px;
+}
+
+#magazine{
+    text-align: center;
+    margin-bottom: 80px; /*次のセクションまでの距離*/
+}
+
+#magazine .flex-item{
+    display: flex;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+#magazine .item{
+    width: 50%;
+    position: relative; /*1⃣相対の基準点(親要素の決定）*/
+}
+
+#magazine .item .text{
+    max-width: 290px;
+    background: rgba(0,0,0,.5);
+    padding: 15px 0;
+    color: #fff;
+    position: absolute; /*2⃣絶対点（動かしたい子要素を選択）*/
+    top: 40%; /*3⃣親基準の上から40％の位置*/
+    /* bottom: 60%;topとの併用不可 */
+    left: 20%; /*親基準の左から20％の位置*/
+    /* right: 40%;rightとの併用不可 */
+}
+
+#magazine .item .title{
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+}
+
+#fashion{
+    height: 520px; /*高さの固定*/
+    background-image: url(../img/fashion.jpg); /*背景画像 ※cssから見て一階層上がったところ(../)にimgフォルダがある*/
+    background-size: cover; /*背景の広がりの指定※object-fit:coverの背景画像版*/
+    background-position: center top; /*どこに焦点をあてるか 左 上の指定（基準がleft top)*/
+    background-repeat: no-repeat; /*スペースが余った際に画像を繰り返すかどうか*/
+    text-align: center;
+    padding-top: 60px;
+    margin-bottom: 80px;
+}
+/* 背景画像を敷くよりもimgタグの重ね合わせを使った方が検索エンジン的にaltがあって分かりやすく、JavaScriptで画像指定する時もやりやすい。 */
+
+.catalog-antique{
+    padding: 60px 0;
+    background: #f5f5f5;
+}
+
+/* 上の方で定義した.sec-titleに対して、margin-bottomの部分だけ上書き */
+.catalog-antique .sec-title{
+    margin-bottom: 40px;
+}
+
+.catalog-antique .flex-item{ /*.itemをまとめているクラス*/
+    display: flex;
+    align-items: center; /*flexの子どもたちの縦位置を中央に揃える*/
+    gap: 40px;
+}
+
+.catalog-antique .item{
+    width: 50%; /*子どもの幅を半々に*/
+}
+
+/* :last-child→最後尾の対象物 疑似クラス */
+.catalog-antique:last-child{
+    margin-bottom: 80px;
+}
+
+#footer{
+    background: #333;
+    font-size: 0.75rem;
+}
+
+#footer .flex-item{
+    display: flex;
+    color: #fff;
+    padding: 100px 0;
+    /*space-between→端から端に配置しつつ、均等にならべる*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer .item{
+    /* width: 33.33333%; 三分割 */
+    width: 30%;
+}
+
+#footer .item .title{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#footer .copyright{
+    background: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* ☆条件分岐☆
+「最大でも」600pxが限界の時 = 画面が小さい */
+/* レスポンシブデザインはデバイスに依存しているのではなく、画面の幅による */
+@media screen and (max-width: 600px){
+    #magazine .flex-item{
+        /* flexは必ずしも横並びだけの指示じゃない */
+        /* ※ただし、デフォルトは横並びだった */
+        flex-direction: column; /*並び方の指定 rowは横（デフォルト）、columnは縦*/
+    }
+
+    #magazine .item{
+        width: 100%;
+    }
+
+    #fascion{
+        padding-top: 35px;
+        margin-bottom: 50px;
+    }
+
+    .catalog-antique .flex-item{
+        flex-direction: column;
+    }
+
+    .catalog-antique .item{
+        width: 100%;
+    }
+
+    #footer .flex-item{
+        flex-direction: column;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    #footer .item{
+        width: 100%;
+    }
+
+    /* 疑似クラスを使って.itemの先頭要素だけ指定 */
+    #footer .item:first-child{
+        text-align: center;
+    }
+    }

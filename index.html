@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title> My Portfolio</title>
+  <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
+  <!-- レスポンシブデザインに対応する一文↓ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/favicon.ico">
+  <!-- リセットCSS（初期設定の打ち消し）のCDN（ネットに挙がっているファイルを読みに行くサービス）とリンクさせる↓ -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <!-- ローディング画面 -->
+  <div id="loading">
+    <p>Loading...</p>
+    <div id="loading-screen"></div>
+  </div>
+
+  <!-- ナビゲーションメニュー -->
+  <nav>
+    <button id="menu-open" class="btn-menu">
+      <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <title>メニューを開く</title>
+        <path clip-rule="evenodd"
+          d="m4.25 8c0-.41421.33579-.75.75-.75h14c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.33579-.75-.75zm0 4c0-.4142.33579-.75.75-.75h14c.4142 0 .75.3358.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.3358-.75-.75zm.75 3.25c-.41421 0-.75.3358-.75.75s.33579.75.75.75h14c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75z"
+          fill-rule="evenodd" />
+      </svg>
+    </button>
+    <div id="menu-panel">
+      <button id="menu-close" class="btn-menu">
+        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <title>メニューを閉じる</title>
+          <path clip-rule="evenodd"
+            d="m7.53033 6.46967c-.29289-.29289-.76777-.29289-1.06066 0s-.29289.76777 0 1.06066l4.46963 4.46967-4.46963 4.4697c-.29289.2929-.29289.7677 0 1.0606s.76777.2929 1.06066 0l4.46967-4.4696 4.4697 4.4696c.2929.2929.7677.2929 1.0606 0s.2929-.7677 0-1.0606l-4.4696-4.4697 4.4696-4.46967c.2929-.29289.2929-.76777 0-1.06066s-.7677-.29289-1.0606 0l-4.4697 4.46963z"
+            fill-rule="evenodd" />
+        </svg>
+      </button>
+      <ul class="menu-list">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#profile">About Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ヘッダー -->
+  <header id="header">
+    <h1 class="site-title">My Portfolio</h1>
+    <p class="introduction">こちらのサイトでは私のスキルやこれまでの経歴などを載せています。</p>
+  </header>
+
+  <main>
+    <section id="works" class="wrapper">
+      <h2 class="sec-title fadein">Works</h2>
+      <p class="fadein">
+        私の制作物を紹介します。HTML/CSSを用いたWebサイト、<br>C#を使ったUnityでのオリジナル作品などを紹介します。<br>リンク先でソースコードをご覧いただけます。
+      </p>
+      <div class="flex-item fadein">
+        <a class="item" href="art/index.html" target="_blank">
+          <img src="img/magazine-archive.jpg" alt="テキストテキストテキストテキスト">
+          <div class="text">
+            <p class="title">Mag88</p>
+            <p>
+              自主制作した<br>架空の店舗サイト
+            </p>
+          </div>
+        </a>
+        <a class="item" href="http://kibitaro.s324.xrea.com/foxy'sgamepage/index.html">
+          <img src="img/foxgame.png" alt="オリジナル2D作品">
+          <div class="text">
+            <p class="title">2D</p>
+            <p>
+              オリジナルゲーム作品
+            </p>
+          </div>
+        </a>
+        <a class="item" href="http://kibitaro.s324.xrea.com/nejikorunpage/index.html">
+          <img src="img/nejiko_toufuchan.png" alt="チーム制作した3D作品">
+          <div class="text">
+            <p class="title">3D</p>
+            <p>
+              チーム制作した作品
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrapper">
+        <div class="sec-intro">
+          <h2 class="sec-title fadein">Skills</h2>
+          <p class="fadein">現時点で習得した言語と使用可能なツールです。</p>
+        </div>
+        <div class="flex">
+          <div class="item1 fadein">
+            <h3>言語</h3>
+            <ul>
+              <li>C＃---基礎/応用レベル</li>
+              <li>Java---基礎レベル（日商プログラミング検定STANDARDレベル）</li>
+              <li>JavaScript---ウェブサイト実装レベル</li>
+              <li>HTML/CSS---ウェブサイト制作可能レベル</li>
+            </ul>
+          </div>
+          <div class="item2 fadein">
+            <h3>ツール</h3>
+            <ul>
+              <li>Unity</li>
+              <li>Visual Studio</li>
+              <li>Eclipse</li>
+              <li>Visual Studio Code</li>
+              <li>GitHub</li>
+              <li>SourceTree</li>
+              <li>FFFTP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="fadein">
+      <div class="wrapper">
+        <h2 class="sec-title fadein">Contact</h2>
+        <p class="fadein">
+          下記のボタンよりメール送信してください。ご連絡お待ちしております。
+        </p>
+        <a class="btn fadein" href="mailto:mia.daydream@gmail.com">メールを送る</a>
+      </div>
+    </section>
+
+    <section id="history" class="catalog-antique">
+      <div class="flex-item wrapper">
+        <div class="item fadein">
+          <img class="fadein" src="img/christmas.jpg" alt="クリスマスイルミネーション">
+        </div>
+        <div class="item fadein">
+          <h2 class="sec-title fadein">History</h2>
+          <dl class="fadein">
+            <dt>2000～2003年</dt>
+            <dd>&emsp;アメリカの高校へ留学・卒業</dd>
+            <dt>2004～2008年</dt>
+            <dd>&emsp;都内の大学 外国語学部 英語学科卒業</dd>
+            <dt>2008～2009年</dt>
+            <dd>&emsp;ラジオ放送局へ入職・対人援助職を希望し退職</dd>
+            <dt>2010年</dt>
+            <dd>&emsp;ヘルパー2級取得後、デイサービスと訪問介護に従事</dd>
+            <dt>2010～2011年</dt>
+            <dd>&emsp;福祉系の専門学校にて社会福祉士養成学科を修了し、社会福祉士（国家資格）を取得</dd>
+            <dt>2011～2024年</dt>
+            <dd>&emsp;市区町村社会福祉協議会に入職し、13年間地域福祉事業に専念</dd>
+            <dt>2024年6月～8月</dt>
+            <dd>&emsp;職業訓練校にてプログラミングを学習</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile" class="catalog-antique">
+      <div class="flex-item wrapper">
+        <div class="item">
+          <h2 class="sec-title fadein">About Me</h2>
+          <p class="fadein">
+            多摩ニュータウン在住。<br>留学先の授業でプログラミングを学習。プログラミングの面白さを知る。退職を機に学習開始、職業訓練校にてGitHub、Sourcetreeを使ったチーム製作等を体験。社会課題の解決に役立つようなアプリやゲーム開発に携わりたい。ゲームプログラマー、または開発系エンジニア志望。<br>〈性格〉友人や同僚からはクールで冷静だが天然なところがあると言われる。<br>〈趣味〉俳句、登山、猫カフェ<br>〈家族〉夫、子ども3人<br>〈休日の過ごし方〉<br>&emsp;ラジオを聴きながら家事をする<br>&emsp;神保町で古本屋巡り<br>&emsp;海外ドラマを字幕なしで観る
+          </p>
+        </div>
+        <div class="item">
+          <img class="fadein" src="img/cat.jpg" alt="眠り猫">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="flex-item wrapper">
+      <div class="item">
+        <a href="index.html">My Portfolio</a>
+      </div>
+      <div class="item">
+        <p class="title">ページ内リンク</p>
+        <ul>
+          <li><a href="index.html">Page Top</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#profile">About Me</a></li>
+        </ul>
+      </div>
+      <!-- <div class="item">
+          <p class="title">Miyuki Iizuka</p>
+          <ul>
+            <li>tell:080-3414-0061</li>
+            <li>mail:mia.daydream@gmail.com</li>
+          </ul>
+        </div> -->
+    </div>
+    <p class="copyright">&copy; My Portfolio</p>
+  </footer>
+
+</body>
+
+</html>
